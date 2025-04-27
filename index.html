@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VIP Application | CATENA RP</title>
+  <title>VIP Rules | CATENA RP</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="logo-container">
       <img src="logo.png" alt="CATENA RP Logo" class="logo" />
     </div>
-    <h1>VIP Application Form</h1>
+    <h1>VIP Rules Form</h1>
   </header>
 
   <div class="container">
@@ -57,7 +57,11 @@
           <option value="package2">🏠 Home 2</option>
           <option value="package3">🎁 Package 3</option>
         </select>
-
+        <section>
+          <label for="reason">Describe your Package</label>
+          <input id="vipPackage" name="vipPackage" rows="3" required></input>
+        </section>
+        
         <label for="vipPrice">Price (€):</label>
         <input type="number" id="vipPrice" name="vipPrice" min="0" required />
       </section>
