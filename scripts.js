@@ -1,3 +1,32 @@
+// Function to handle form submission
+function handleFormSubmission(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Check if the "Agree to All Rules" checkbox is checked
+  const agreeAllRules = document.getElementById('agreeAllRules');
+
+  if (!agreeAllRules.checked) {
+    alert('You must agree to all terms and conditions.');
+    return false;
+  }
+
+  // Collect form data
+  const formData = {
+    discord: document.getElementById('discord').value,
+    fivem: document.getElementById('fivem').value,
+    characterName: document.getElementById('characterName').value,
+    characterAge: document.getElementById('characterAge').value,
+    experience: document.getElementById('experience').value,
+    reason: document.getElementById('reason').value,
+    vipPackage: document.getElementById('vipPackage').value,
+    vipPrice: document.getElementById('vipPrice').value,
+    packageDescription: document.getElementById('Package').value // New package description
+  };
+
+  // Send data to Discord webhook
+  sendToDiscord(formData);
+}
+
 // Function to send data to Discord webhook
 function sendToDiscord(formData) {
   const webhookUrl = 'https://discord.com/api/webhooks/1365960508628275210/oR4aN7PnGHlRA0wAUeYVQe__M8Q-xmENeqk_Hu44bR9C3dUhRfUyqR4HLb6a8kh7jLGU'; // Your provided webhook URL
@@ -46,6 +75,11 @@ function sendToDiscord(formData) {
           name: "Price (€) :euro:",
           value: formData.vipPrice,
           inline: true
+        },
+        {
+          name: "Package Description :clipboard:", // Added package description field
+          value: formData.packageDescription,
+          inline: false
         }
       ],
       footer: {
@@ -74,34 +108,6 @@ function sendToDiscord(formData) {
     alert('An error occurred. Please try again.');
     document.getElementById('vipForm').reset(); // Reset form on error
   });
-}
-
-// Function to handle form submission
-function handleFormSubmission(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Check if the "Agree to All Rules" checkbox is checked
-  const agreeAllRules = document.getElementById('agreeAllRules');
-
-  if (!agreeAllRules.checked) {
-    alert('You must agree to all terms and conditions.');
-    return false;
-  }
-
-  // Collect form data
-  const formData = {
-    discord: document.getElementById('discord').value,
-    fivem: document.getElementById('fivem').value,
-    characterName: document.getElementById('characterName').value,
-    characterAge: document.getElementById('characterAge').value,
-    experience: document.getElementById('experience').value,
-    reason: document.getElementById('reason').value,
-    vipPackage: document.getElementById('vipPackage').value,
-    vipPrice: document.getElementById('vipPrice').value
-  };
-
-  // Send data to Discord webhook
-  sendToDiscord(formData);
 }
 
 // Initialize form behavior
