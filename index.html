@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIP Application | CATENA RP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="CATENA RP Logo" class="logo" />
+    </div>
+    <h1>VIP Application Form</h1>
+  </header>
+
+  <div class="container">
+    <form id="vipForm">
+      
+      <!-- Personal Info -->
+      <section>
+        <label for="discord">Discord Username:</label>
+        <input type="text" id="discord" name="discord" required />
+
+        <label for="fivem">FiveM License or Discord ID:</label>
+        <input type="text" id="fivem" name="fivem" required />
+      </section>
+
+      <!-- Character Info -->
+      <section>
+        <label for="characterName">Character's Name:</label>
+        <input type="text" id="characterName" name="characterName" required />
+
+        <label for="characterAge">Character's Age:</label>
+        <input type="number" id="characterAge" name="characterAge" min="10" max="100" required />
+      </section>
+
+      <!-- Roleplay Experience -->
+      <section>
+        <label for="experience">Current Roleplay Job:</label>
+        <textarea id="experience" name="experience" rows="3" required></textarea>
+      </section>
+
+      <!-- Reason for VIP -->
+      <section>
+        <label for="reason">Why do you want VIP?</label>
+        <textarea id="reason" name="reason" rows="3" required></textarea>
+      </section>
+
+      <!-- VIP Selection -->
+      <section>
+        <label for="vipPackage">Select VIP Package:</label>
+        <select id="vipPackage" name="vipPackage" required>
+          <option value="" disabled selected>Select a package</option>
+          <option value="package1">🚗 Car 1</option>
+          <option value="package2">🏠 Home 2</option>
+          <option value="package3">🎁 Package 3</option>
+        </select>
+
+        <label for="vipPrice">Price (€):</label>
+        <input type="number" id="vipPrice" name="vipPrice" min="0" required />
+      </section>
+
+      <!-- Rules Agreement -->
+      <div class="rules">
+        <h3>Terms & Conditions</h3>
+        <p>
+          By submitting this application, you agree to the following rules:
+        </p>
+        <ul>
+          <li>No cheating or exploiting (ban & VIP loss).</li>
+          <li>Leaving server = VIP removal, no refund.</li>
+          <li>Toxicity/bad conduct = ban & VIP wipe.</li>
+          <li>VIP is non-transferable and final.</li>
+          <li>Staff may remove VIP if you break rules.</li>
+        </ul>
+        <label for="agreeAllRules">
+          <input type="checkbox" id="agreeAllRules" required /> I agree to all the terms and conditions.
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit VIP Application" />
+
+    </form>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 CATENA RP. All Rights Reserved. <br>Website built by <a href="https://an4shop.tebex.io/" target="_blank">AN4SHOP</a>.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
